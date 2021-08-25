@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.app {
+  padding: 10px;
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  border: 3px solid hsla(333, 60%, 60%, 1);
+
+  .timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #d65c93;
+    transition: all 0.3s ease;
+    &__timeleft {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.time-setters {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.time-setter {
+  h4 {
+    margin: 0.3rem 0;
+  }
+  &__controls {
+    display: flex;
+    justify-content: center;
+    > * + * {
+      margin-left: 0.5rem;
+    }
+  }
+}
+.button {
+  background: hsla(333, 60%, 50%, 0.6);
+  border: 0;
+  border-radius: 3px;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  outline: 0;
+  transition: all 0.2s ease;
+  padding: 0.2em 0.4em;
+  &:focus-visible {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2pt hsla(333, 60%, 25%, 0.8);
+  }
+  &:focus {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+
+  > * + * {
+    margin-left: 0.5rem;
+  }
+}
+.blink {
+  animation: blink 0.7s ease-in-out 5 backwards;
+}
+@keyframes blink {
+  0% {
+    color: red;
+  }
+  100% {
+    color: transparent;
+  }
+}
