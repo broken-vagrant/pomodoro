@@ -92,19 +92,19 @@ const Timer = ({ time, isTimeout, timerType }) => {
       <h3 id="timer-label" className="timer__label">
         {timerType}
       </h3>
-      <div id="time-left" className="timer__timeleft">{`${formatNumber(
-        time.minutes
-      )}:${formatNumber(time.seconds)}`}</div>
+      <div id="time-left" className="timer__timeleft">
+       {`${formatNumber(time.minutes)}:${formatNumber(time.seconds)}`}
+      </div>
     </div>
   );
 };
 const TimerControls = ({ handlePlayPause, handleReset }) => {
   return (
     <div className="timer-controls">
-      <Button id="start_stop" onClick={handlePlayPause}>
+      <Button id="start_stop" onClick={handlePlayPause} aria-label="start or stop timer">
         &#9654;||
       </Button>
-      <Button id="reset" onClick={handleReset}>
+      <Button id="reset" onClick={handleReset} aria-label="Reset timer">
         &#10227;
       </Button>
     </div>
@@ -277,7 +277,6 @@ function App() {
             idPrefix="break"
             value={breakLength}
             handleClick={handleBreakLengthChange}
-            aria-label="Change break Length"
           />
           <TimeSetter
             title="Session length"
